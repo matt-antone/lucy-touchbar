@@ -12,7 +12,7 @@
   "activationEvents": [
     "onCommand:extension.fileExplorer",
     "onCommand:extension.terminal",
-    "onCommand:extension.git"
+    "onCommand:extension.sourceControl"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -26,7 +26,7 @@
         "title": "Explorer"
       },
       {
-        "command": "extension.git",
+        "command": "extension.sourceControl",
         "title": "Source Control"
       }
     ],
@@ -41,7 +41,7 @@
             "group": "editing"
           },
           {
-            "command": "extension.git",
+            "command": "extension.sourceControl",
             "group": "editing"
           }
     ]

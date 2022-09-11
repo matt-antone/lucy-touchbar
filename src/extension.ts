@@ -22,7 +22,7 @@ export function activate(context: vscode.ExtensionContext) {
     });
 
 	// open the git tab
-	const git = vscode.commands.registerCommand('extension.git', () => {
+	const git = vscode.commands.registerCommand('extension.sourceControl', () => {
         vscode.commands.executeCommand('workbench.scm.focus');
     });
 
