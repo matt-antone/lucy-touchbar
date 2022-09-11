@@ -11,7 +11,8 @@
   ],
   "activationEvents": [
     "onCommand:extension.fileExplorer",
-    "onCommand:extension.terminal"
+    "onCommand:extension.terminal",
+    "onCommand:extension.git"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -23,6 +24,10 @@
       {
         "command": "extension.fileExplorer",
         "title": "Explorer"
+      },
+      {
+        "command": "extension.git",
+        "title": "Source Control"
       }
     ],
     "menus": {
@@ -34,7 +39,11 @@
           {
             "command": "extension.fileExplorer",
             "group": "editing"
-        }
+          },
+          {
+            "command": "extension.git",
+            "group": "editing"
+          }
     ]
     }  
   },

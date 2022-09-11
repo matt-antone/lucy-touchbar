@@ -10,24 +10,23 @@ export function activate(context: vscode.ExtensionContext) {
 	// This line of code will only be executed once when your extension is activated
 	console.log('Congratulations, your extension "lucy-touchbar" is now active!');
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('extension.helloWorld', () => {
-		// The code you place here will be executed every time your command is executed
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from lucy-touchbar!');
-	});
-
-    const fileExplorer = vscode.commands.registerCommand('extension.fileExplorer', () => {
+    
+	// Open and focus the file explorer
+	const fileExplorer = vscode.commands.registerCommand('extension.fileExplorer', () => {
         vscode.commands.executeCommand('workbench.view.explorer')
     });
 
-    const terminal = vscode.commands.registerCommand('extension.terminal', () => {
+    // Toggle the terminal
+	const terminal = vscode.commands.registerCommand('extension.terminal', () => {
         vscode.commands.executeCommand('workbench.action.terminal.toggleTerminal')
     });
 
-	context.subscriptions.push(fileExplorer,terminal,disposable);
+	// open the git tab
+	const git = vscode.commands.registerCommand('extension.git', () => {
+        vscode.commands.executeCommand('workbench.scm.focus')
+    });
+
+	context.subscriptions.push(fileExplorer,terminal,git);
 }
 
 // this method is called when your extension is deactivated
