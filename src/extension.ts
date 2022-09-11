@@ -13,17 +13,17 @@ export function activate(context: vscode.ExtensionContext) {
     
 	// Open and focus the file explorer
 	const fileExplorer = vscode.commands.registerCommand('extension.fileExplorer', () => {
-        vscode.commands.executeCommand('workbench.view.explorer')
+        vscode.commands.executeCommand('workbench.view.explorer');
     });
 
     // Toggle the terminal
 	const terminal = vscode.commands.registerCommand('extension.terminal', () => {
-        vscode.commands.executeCommand('workbench.action.terminal.toggleTerminal')
+        vscode.commands.executeCommand('workbench.action.terminal.toggleTerminal');
     });
 
 	// open the git tab
 	const git = vscode.commands.registerCommand('extension.git', () => {
-        vscode.commands.executeCommand('workbench.scm.focus')
+        vscode.commands.executeCommand('workbench.scm.focus');
     });
 
 	context.subscriptions.push(fileExplorer,terminal,git);
